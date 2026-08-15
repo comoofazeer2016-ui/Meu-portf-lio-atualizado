@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinícius Silva | Design Gráfico, Branding & Motion Design</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f6ff',
+                            100: '#e0edff',
+                            400: '#3882f6',
+                            500: '#1d63ed',
+                            600: '#0242e1',
+                            700: '#0031b8',
+                            dark: '#0a0d14',
+                            card: '#121723',
+                            border: '#1f293d',
+                            accent: '#38bdf8',
+                            purple: '#8b5cf6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0d14;
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(18, 23, 35, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(18, 23, 35, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0d14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-brand-accent p-0.5 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center">
+                            <span class="font-extrabold text-lg text-brand-accent">VS</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-accent transition-colors">Vinícius Silva</span>
+                        <span class="text-xs text-gray-400 -mt-1 font-medium">Design & Branding</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-300">
+                    <a href="#inicio" class="hover:text-brand-accent transition-colors">Início</a>
+                    <a href="#sobre" class="hover:text-brand-accent transition-colors">Sobre</a>
+                    <a href="#servicos" class="hover:text-brand-accent transition-colors">Serviços</a>
+                    <a href="#portfolio" class="hover:text-brand-accent transition-colors">Projetos</a>
+                    <a href="#processo" class="hover:text-brand-accent transition-colors">Processo</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://wa.me/5581989622826?text=Ol%C3%A1%20Vin%C3%ADcius!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20minha%20empresa." target="_blank" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-500 to-brand-400 text-white font-semibold text-sm hover:shadow-lg hover:shadow-brand-500/25 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        <span>Iniciar Projeto</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-4 pb-6 space-y-3 bg-brand-dark/95 border-b border-white/10 mt-3">
+            <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-white/5">Início</a>
+            <a href="#sobre" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-white/5">Sobre Mim</a>
+            <a href="#servicos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-white/5">Serviços</a>
+            <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-white/5">Portfólio</a>
+            <a href="#processo" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-white/5">Processo</a>
+            <a href="https://wa.me/5581989622826?text=Ol%C3%A1%20Vin%C3%ADcius!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="w-full text-center mt-2 px-5 py-3 rounded-xl bg-brand-500 text-white font-semibold text-sm flex items-center justify-center gap-2">
+                <i data-lucide="message-square" class="w-4 h-4"></i>
+                <span>Fazer Orçamento no WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden glow-effect">
+        <!-- Background decorative blobs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-brand-purple/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto space-y-6">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand-accent/20 text-xs sm:text-sm font-semibold text-brand-accent">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                    <span>6 Anos Transformando Negócios pelo Design</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1]">
+                    O Design que seu negócio precisa para <span class="text-gradient">crescer e vender mais!</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto font-normal leading-relaxed">
+                    Especialista em <strong class="text-gray-200">Branding</strong>, <strong class="text-gray-200">UX/UI</strong> e <strong class="text-gray-200">Motion Design</strong>. Elevando a imagem de pequenas empresas, marcas e agências com estratégias visuais marcantes.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://wa.me/5581989622826?text=Ol%C3%A1%20Vin%C3%ADcius!%20Gostaria%20de%20elevar%20o%20nível%20visual%20da%20minha%20empresa." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-500 via-brand-400 to-brand-accent text-white font-bold text-base hover:shadow-xl hover:shadow-brand-500/30 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                        <span>Quero Dar um Up no Meu Visual</span>
+                    </a>
+                    <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-gray-300 font-semibold text-base hover:bg-white/10 hover:text-white transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="eye" class="w-5 h-5"></i>
+                        <span>Ver Portfólio</span>
+                    </a>
+                </div>
+
+                <!-- Key Metrics / Numbers -->
+                <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <div class="glass-card p-4 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white text-gradient">+100</div>
+                        <div class="text-xs text-gray-400 font-medium mt-1">Projetos Entregues</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white text-gradient">6 Anos</div>
+                        <div class="text-xs text-gray-400 font-medium mt-1">De Trajetória</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white text-gradient">100%</div>
+                        <div class="text-xs text-gray-400 font-medium mt-1">Dedicação ao Cliente</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white text-gradient">+50</div>
+                        <div class="text-xs text-gray-400 font-medium mt-1">Marcas Atendidas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim Section -->
+    <section id="sobre" class="py-20 relative bg-brand-dark/50 border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Graphic Card / Profile Representation -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden glass-card p-6 md:p-8 space-y-6">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-500 to-brand-accent p-1 shadow-xl">
+                            <div class="w-full h-full bg-brand-card rounded-xl flex items-center justify-center">
+                                <i data-lucide="palette" class="w-10 h-10 text-brand-accent"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Vinícius Silva</h3>
+                            <p class="text-brand-accent font-medium text-sm">Designer Gráfico & Especialista Visual</p>
+                        </div>
+                        <div class="space-y-3 pt-2 text-sm text-gray-300">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                <span>Foco absoluto no resultado do cliente</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                <span>Domínio de Branding, UI/UX e Motion</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                <span>Design único que fixa na mente do público</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs text-gray-400">
+                            <span>Localização: Pernambuco, Brasil</span>
+                            <span>Atendimento Global</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story / Copywriting -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel text-xs font-semibold text-brand-accent">
+                        <i data-lucide="user" class="w-3.5 h-3.5"></i>
+                        <span>Sobre Mim & Propósito</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Muito mais do que artes bonitas: eu crio a <span class="text-gradient">percepção visual</span> que faz sua empresa vender.
+                    </h2>
+
+                    <p class="text-gray-300 leading-relaxed text-base">
+                        Olá, me chamo Vinícius! Sou designer gráfico e especialista em criação de marcas estratégicas para empresas de todos os portes que querem dar um upgrade no visual e se destacar de verdade no mercado.
+                    </p>
+
+                    <div class="space-y-4 text-gray-400 text-sm leading-relaxed">
+                        <p>
+                            Minha jornada começou lá em 2014, pelo celular, quando a internet ainda era uma novidade cheia de descobertas para mim. Inspirado por vídeos no YouTube sobre criação de banners e thumbnails, baixei o antigo aplicativo "PS Touch" e fiz minhas primeiras criações. Fiz vários trabalhos de graça na época pelo puro prazer e orgulho de aprender — e foi esse o pontapé inicial que fez tudo fluir.
+                        </p>
+                        <p>
+                            Meu propósito hoje é o mesmo desde o início: <strong class="text-white">mudar a percepção das pessoas ao olhar para uma marca</strong>. O design certo desperta confiança, transmite profissionalismo e cria uma experiência marcante. O design muda tudo no seu negócio.
+                        </p>
+                    </div>
+
+                    <!-- Values Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="p-4 rounded-xl glass-panel space-y-1">
+                            <h4 class="font-bold text-white text-sm">Visão de Dono</h4>
+                            <p class="text-xs text-gray-400">Cuido de cada detalhe da sua marca como se fosse minha.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass-panel space-y-1">
+                            <h4 class="font-bold text-white text-sm">Evolução Contínua</h4>
+                            <p class="text-xs text-gray-400">Do mobile ao domínio completo de ferramentas avançadas.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass-panel space-y-1">
+                            <h4 class="font-bold text-white text-sm">Design Marcante</h4>
+                            <p class="text-xs text-gray-400">Crio visuais que fixam na mente e diferenciam do concorrente.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel text-xs font-semibold text-brand-accent">
+                    <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                    <span>O Que Posso Fazer Por Você</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Serviços Especializados</h2>
+                <p class="text-gray-400 text-base">Soluções visuais completas e estratégicas para transformar a imagem da sua empresa em todos os canais.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-accent group-hover:scale-110 transition-transform">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Branding & Identidade Visual</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Criação de logotipos únicos, paletas de cores, tipografias e manuais de marca completos para criar uma presença memorável.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center text-xs font-semibold text-brand-accent gap-1">
+                        <span>Reconhecimento de Marca</span>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple group-hover:scale-110 transition-transform">
+                            <i data-lucide="layout" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">UI/UX & Web Design</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Projetos de interfaces modernas, intuitivas e responsivas para sites, landing pages e aplicativos focados em conversão.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center text-xs font-semibold text-brand-purple gap-1">
+                        <span>Aumento nas Vendas</span>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="video" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Motion Design & Animação</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Animações gráficas dinâmicas, vinhetas e vídeos promocionais para dar vida e movimento ao seu negócio.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center text-xs font-semibold text-emerald-400 gap-1">
+                        <span>Alto Engajamento Visual</span>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="share-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Social Media & Mídia Impressa</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Banners, artes para redes sociais, outdoors e cartazes com visual profissional para padronizar sua comunicação.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center text-xs font-semibold text-amber-400 gap-1">
+                        <span>Presença Forte & Padronizada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Projetos / Portfólio Section -->
+    <section id="portfolio" class="py-20 relative bg-brand-dark/60 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="space-y-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel text-xs font-semibold text-brand-accent">
+                        <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+                        <span>Trabalhos Selecionados</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Galeria de Projetos</h2>
+                    <p class="text-gray-400 text-sm sm:text-base max-w-xl">
+                        Conheça alguns dos projetos onde apliquei branding, design gráfico e motion estratégicos para gerar resultados.
+                    </p>
+                </div>
+
+                <!-- Portfolio Filters -->
+                <div id="filter-container" class="flex flex-wrap gap-2">
+                    <button data-filter="all" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-500 text-white shadow-lg transition-all">Todos</button>
+                    <button data-filter="branding" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-gray-400 hover:text-white transition-all">Branding</button>
+                    <button data-filter="ecommerce" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-gray-400 hover:text-white transition-all">E-commerce</button>
+                    <button data-filter="social" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-gray-400 hover:text-white transition-all">Social Media</button>
+                    <button data-filter="motion" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-gray-400 hover:text-white transition-all">Motion</button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: ImportGen -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="branding ecommerce" onclick="openProjectModal('ImportGen', 'Branding & E-commerce', 'Identidade visual completa, manual de marca e artes de apresentação para produtos digitais e física.', 'Modernização total do visual da empresa, transmitindo alta confiança para o público consumidor e gerando um crescimento direto no apelo comercial e taxa de vendas online.', '')">
+                    <div class="relative h-64 bg-gradient-to-br from-blue-900/40 via-brand-card to-brand-dark p-6 flex flex-col justify-between overflow-hidden">
+                        <!-- Abstract Visual Graphic Placeholder -->
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-sky-400/20 via-transparent to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-300 border border-sky-500/30">Branding & E-commerce</span>
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-white group-hover:bg-brand-500 transition-colors">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">ImportGen</h3>
+                            <p class="text-xs text-gray-300 mt-1 line-clamp-2">Identidade visual e posicionamento de marca para plataforma e-commerce.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Escopo: Logo, Manual & UI</span>
+                            <span class="text-emerald-400 font-medium">Projeto Concluído</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Promorin -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="social" onclick="openProjectModal('Promorin', 'Social Media & Design Gráfico', 'Planejamento visual para redes sociais, criação de banners para campanhas, peças publicitárias e templates institucionais.', 'Aumento expressivo do engajamento nas mídias sociais e consolidação de um padrão estético forte e inconfundível para a marca.', '')">
+                    <div class="relative h-64 bg-gradient-to-br from-purple-900/40 via-brand-card to-brand-dark p-6 flex flex-col justify-between overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/20 via-transparent to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Social Media</span>
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-white group-hover:bg-brand-purple transition-colors">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-brand-purple transition-colors">Promorin</h3>
+                            <p class="text-xs text-gray-300 mt-1 line-clamp-2">Campanha de social media e peças promocionais de alta conversão.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Escopo: Artes & Mídia Digital</span>
+                            <span class="text-emerald-400 font-medium">Projeto Concluído</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Eventos & Mídia -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="motion social" onclick="openProjectModal('Projetos de Eventos & Mídia', 'Motion Design & Banners', 'Criação de vinhetas animadas, banners impressos de grande porte, flyers promocionais e teaser de divulgação.', 'Grande destaque e visibilidade visual para os eventos, garantindo atração massiva de público através das redes e materiais visuais.', '')">
+                    <div class="relative h-64 bg-gradient-to-br from-amber-900/40 via-brand-card to-brand-dark p-6 flex flex-col justify-between overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-500/20 via-transparent to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">Motion & Eventos</span>
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-white group-hover:bg-amber-500 transition-colors">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">Campanhas de Eventos</h3>
+                            <p class="text-xs text-gray-300 mt-1 line-clamp-2">Material promocional completo e animações para divulgação.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Escopo: Cartazes, Motion & Banners</span>
+                            <span class="text-emerald-400 font-medium">Projeto Concluído</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Branding Redesign -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="branding" onclick="openProjectModal('Branding Corporativo', 'Identidade Visual & Branding', 'Redesign completo de marca, criação de logotipo moderno, tipografia exclusiva e guia de aplicação gráfica.', 'Elevação imediata do valor percebido da empresa perante seus clientes e investidores.', '')">
+                    <div class="relative h-64 bg-gradient-to-br from-emerald-900/40 via-brand-card to-brand-dark p-6 flex flex-col justify-between overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/20 via-transparent to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Branding</span>
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-white group-hover:bg-emerald-500 transition-colors">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">Branding Premium</h3>
+                            <p class="text-xs text-gray-300 mt-1 line-clamp-2">Construção e renovação de marcas corporativas com elegância.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Escopo: Logo & Guia Visual</span>
+                            <span class="text-emerald-400 font-medium">Projeto Concluído</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Motion Teasers -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="motion" onclick="openProjectModal('Motion Graphics & Teasers', 'Motion Design', 'Animação 2D de elementos gráficos, apresentações de marcas em vídeo e transições dinâmicas para anúncios digitais.', 'Super engajamento em reels e conteúdos em vídeo, capturando a atenção dos clientes nos primeiros 3 segundos.', '')">
+                    <div class="relative h-64 bg-gradient-to-br from-rose-900/40 via-brand-card to-brand-dark p-6 flex flex-col justify-between overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-rose-500/20 via-transparent to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30">Motion Graphics</span>
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-white group-hover:bg-rose-500 transition-colors">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-rose-400 transition-colors">Motion Teasers</h3>
+                            <p class="text-xs text-gray-300 mt-1 line-clamp-2">Animações impactantes para reels, stories e vinhetas.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Escopo: Vídeo & Animação 2D</span>
+                            <span class="text-emerald-400 font-medium">Projeto Concluído</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: E-commerce Visuals -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="ecommerce social" onclick="openProjectModal('E-commerce & Banners', 'Design para Vendas', 'Criação de carrosséis para produtos, artes promocionais de ofertas e layouts para e-commerce.', 'Aumento direto na taxa de clique (CTR) e conversão em anúncios pagos.', '')">
+                    <div class="relative h-64 bg-gradient-to-br from-cyan-900/40 via-brand-card to-brand-dark p-6 flex flex-col justify-between overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-500/20 via-transparent to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">E-commerce & Ads</span>
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-white group-hover:bg-cyan-500 transition-colors">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">E-commerce Performance</h3>
+                            <p class="text-xs text-gray-300 mt-1 line-clamp-2">Artes focadas em conversão direta de vendas para lojas virtuais.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Escopo: Banners, Cards & Ads</span>
+                            <span class="text-emerald-400 font-medium">Projeto Concluído</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo de Trabalho Section -->
+    <section id="processo" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel text-xs font-semibold text-brand-accent">
+                    <i data-lucide="workflow" class="w-3.5 h-3.5"></i>
+                    <span>Como Trabalhamos</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Meu Processo de Criação</h2>
+                <p class="text-gray-400 text-base">Uma metodologia clara e transparente para entregar resultados impecáveis dentro do prazo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                <!-- Step 1 -->
+                <div class="glass-card p-6 rounded-2xl relative space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500 text-white font-extrabold flex items-center justify-center text-lg">01</div>
+                    <h3 class="text-lg font-bold text-white">Briefing & Alinhamento</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Entendo a fundo as necessidades, público-alvo e os objetivos de negócio da sua empresa.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-card p-6 rounded-2xl relative space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-brand-400 text-white font-extrabold flex items-center justify-center text-lg">02</div>
+                    <h3 class="text-lg font-bold text-white">Estratégia & Conceito</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Pesquisa visual, criação do conceito estratégico e definições dos caminhos visuais.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-card p-6 rounded-2xl relative space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-brand-purple text-white font-extrabold flex items-center justify-center text-lg">03</div>
+                    <h3 class="text-lg font-bold text-white">Design & Execução</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Desenvolvimento detalhado das peças visuais com nível máximo de acabamento.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="glass-card p-6 rounded-2xl relative space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white font-extrabold flex items-center justify-center text-lg">04</div>
+                    <h3 class="text-lg font-bold text-white">Entrega & Aplicação</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Envio dos arquivos finais prontos em alta resolução nos formatos corretos para uso.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Final & Contato -->
+    <section id="contato" class="py-20 relative bg-gradient-to-b from-brand-dark to-brand-card border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-8 md:p-14 rounded-3xl border border-brand-accent/30 text-center space-y-8 relative overflow-hidden glow-effect">
+                
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-xs font-semibold text-emerald-400">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Disponível para Novos Projetos & Parcerias</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+                        Vamos transformar o visual da sua empresa juntos?
+                    </h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto text-base">
+                        Entre em contato agora para conversarmos sobre seu projeto. Dê o primeiro passo para ter o design que seu negócio precisa para se destacar.
+                    </p>
+                </div>
+
+                <!-- Direct Contact Options -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+                    <!-- WhatsApp Direct -->
+                    <a href="https://wa.me/5581989622826?text=Ol%C3%A1%20Vin%C3%ADcius!%20Quero%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa." target="_blank" class="glass-panel p-5 rounded-2xl border border-emerald-500/30 hover:border-emerald-400 flex items-center gap-4 group transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="phone-call" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block font-medium">WhatsApp / Telefone</span>
+                            <span class="text-white font-bold text-sm sm:text-base group-hover:text-emerald-400 transition-colors">(81) 98962-2826</span>
+                        </div>
+                    </a>
+
+                    <!-- Email Direct -->
+                    <a href="mailto:viniciusprei@gmail.com" class="glass-panel p-5 rounded-2xl border border-brand-accent/30 hover:border-brand-accent flex items-center gap-4 group transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-brand-accent/20 text-brand-accent flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <span class="text-xs text-gray-400 block font-medium">E-mail Profissional</span>
+                            <span class="text-white font-bold text-xs sm:text-sm group-hover:text-brand-accent transition-colors truncate block">viniciusprei@gmail.com</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Rapid Form / Fast Proposal -->
+                <div class="max-w-xl mx-auto pt-4 border-t border-white/10 text-left space-y-4">
+                    <h4 class="text-center text-sm font-bold text-white">Solicite um retorno rápido pelo WhatsApp:</h4>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="text" id="client-name" placeholder="Seu nome ou nome da sua empresa" class="w-full px-4 py-3 rounded-xl bg-brand-dark/80 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-accent">
+                        <button onclick="sendQuickWhatsApp()" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-bold text-sm transition-all whitespace-nowrap flex items-center justify-center gap-2">
+                            <span>Enviar Mensagem</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-brand-dark border-t border-white/5 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-white">Vinícius Silva Design</span>
+                <span>© 2026 Todos os direitos reservados.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <span>Branding • UI/UX • Motion Design</span>
+                <a href="#inicio" class="text-gray-400 hover:text-white transition-colors">Voltar ao topo ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5581989622826?text=Ol%C3%A1%20Vin%C3%ADcius!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-emerald-500 text-white shadow-2xl shadow-emerald-500/40 hover:scale-110 active:scale-95 transition-all flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Modal de Detalhes do Projeto -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-card max-w-2xl w-full rounded-3xl overflow-hidden border border-white/10 p-6 sm:p-8 relative space-y-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeProjectModal()" class="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-gray-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div>
+                <span id="modal-category" class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-accent/20 text-brand-accent border border-brand-accent/30">Categoria</span>
+                <h3 id="modal-title" class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Nome do Projeto</h3>
+            </div>
+
+            <!-- Visual Mockup Holder -->
+            <div id="modal-visual" class="w-full h-48 bg-gradient-to-r from-brand-card to-brand-border rounded-2xl flex items-center justify-center text-gray-400 text-sm font-medium border border-white/5">
+                [Visual do Projeto]
+            </div>
+
+            <div class="space-y-4 text-sm">
+                <div>
+                    <h4 class="font-bold text-white">Escopo do Trabalho:</h4>
+                    <p id="modal-scope" class="text-gray-300 mt-1">Detalhes do escopo executado...</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white">Resultado Alcançado:</h4>
+                    <p id="modal-result" class="text-gray-300 mt-1">Impacto e objetivo alcançado para o cliente...</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+                <a href="https://wa.me/5581989622826?text=Ol%C3%A1%20Vin%C3%ADcius!%20Gostei%20do%20seu%20projeto%20e%20quero%20algo%20semelhante%20para%20mim." target="_blank" class="w-full py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-bold text-sm text-center transition-all">
+                    Quero um Projeto Semelhante
+                </a>
+                <button onclick="closeProjectModal()" class="w-full sm:w-auto px-6 py-3 rounded-xl glass-panel text-gray-300 font-semibold text-sm hover:bg-white/10 transition-all">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        // Inicializar Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar no link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filtros da Galeria de Portfólio
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-500', 'text-white', 'shadow-lg');
+                    b.classList.add('glass-panel', 'text-gray-400');
+                });
+                btn.classList.add('bg-brand-500', 'text-white', 'shadow-lg');
+                btn.classList.remove('glass-panel', 'text-gray-400');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Funções para o Modal de Projetos
+        function openProjectModal(title, category, scope, result, visualText) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-category').innerText = category;
+            document.getElementById('modal-scope').innerText = scope;
+            document.getElementById('modal-result').innerText = result;
+            document.getElementById('modal-visual').innerText = visualText;
+            
+            document.getElementById('project-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fechar modal ao clicar fora dele
+        document.getElementById('project-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'project-modal') {
+                closeProjectModal();
+            }
+        });
+
+        // Envio rápido pelo formulário
+        function sendQuickWhatsApp() {
+            const name = document.getElementById('client-name').value.trim();
+            let msg = "Ol%C3%A1%20Vin%C3%ADcius!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.";
+            if (name) {
+                msg = `Ol%C3%A1%20Vin%C3%ADcius!%20Me%20chamo%20${encodeURIComponent(name)}%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20o%20meu%20projeto.`;
+            }
+            window.open(`https://wa.me/5581989622826?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+</html>
